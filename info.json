@@ -1,0 +1,9 @@
+{
+  "name": "ltn-rich-text-converter",
+  "version": "1.0.0",
+  "title": "LTN - Rich Text Converter",
+  "author": "Quezler",
+  "factorio_version": "1.1",
+  "dependencies": ["base", "? LogisticTrainNetwork"],
+  "description": "Converts 'interactive' rich text station names to mere icons."
+}
