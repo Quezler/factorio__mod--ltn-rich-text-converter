@@ -1,4 +1,4 @@
-local classes = {"item", "entity", "technology", "recipe", "item-group", "fluid", "tile", "virtual-signal"}
+local classes = {"item", "entity", "technology", "recipe", "item%-group", "fluid", "tile", "virtual%-signal"}
 
 function rename(train_stop)
     local backer_name = train_stop.backer_name
