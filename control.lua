@@ -1,11 +1,13 @@
-local classes = {"item", "entity", "technology", "recipe", "item%-group", "fluid", "tile", "virtual%-signal"}
-
 function rename(train_stop)
     local backer_name = train_stop.backer_name
 
-    for _,class in ipairs(classes) do
-          backer_name = backer_name:gsub("%[" .. class .. "=", "[img=" .. class .. "/")
-    end
+      backer_name = backer_name:gsub("%[item="           , "[img=item/")
+      backer_name = backer_name:gsub("%[entity="         , "[img=entity/")
+      backer_name = backer_name:gsub("%[recipe="         , "[img=recipe/")
+      backer_name = backer_name:gsub("%[item%-group="    , "[img=item-group/")
+      backer_name = backer_name:gsub("%[fluid="          , "[img=fluid/")
+      backer_name = backer_name:gsub("%[tile="           , "[img=tile/")
+      backer_name = backer_name:gsub("%[virtual%-signal=", "[img=virtual-signal/")
 
     if(train_stop.backer_name ~= backer_name) then
         train_stop.backer_name = backer_name
