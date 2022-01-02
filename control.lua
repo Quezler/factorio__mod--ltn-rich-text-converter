@@ -20,12 +20,20 @@ script.on_init(function(event)
   end
 end)
 
-function dirty(event)
-    if (event.entity.type == "train-stop") then
-        rename(event.entity)
+function dirty(entity)
+    if (entity.type == "train-stop") then
+        rename(entity)
     end
 end
 
-script.on_event(defines.events.on_built_entity, dirty)
-script.on_event(defines.events.on_entity_renamed, dirty)
-script.on_event(defines.events.on_robot_built_entity, dirty)
+script.on_event(defines.events.on_built_entity, function(event)
+    dirty(event.created_entity)
+end)
+
+script.on_event(defines.events.on_entity_renamed, function(event)
+    dirty(event.entity)
+end)
+
+script.on_event(defines.events.on_robot_built_entity, function(event)
+    dirty(event.created_entity)
+end)
