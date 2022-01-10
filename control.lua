@@ -11,6 +11,7 @@ function rename(train_stop)
 
     if(train_stop.backer_name ~= backer_name) then
         train_stop.backer_name = backer_name
+        train_stop.surface.create_entity{name = "flying-text", position = train_stop.position, text = "Rich text converted: " .. backer_name}
     end
 end
 
